@@ -1,0 +1,45 @@
+/* test variable */
+$background: yellowgreen;
+$grisclair:grey;
+$grisfonce:rgb(12, 12, 12);
+
+
+/* test d'imbrication */
+body {
+    background-color: $background;
+    p {
+        border: 1px solid red;
+    }
+}
+
+/* test d'héritage */
+%button {
+    border: 1px solid $grisfonce;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 10px;
+    &:hover {
+        cursor: pointer;
+        background-color: $grisclair;
+        color: white;
+    }
+}
+/*button {
+    @extend %button;
+}*/
+
+/* test mixins */
+@mixin bouton($bgcolor){
+    border: 1px solid $grisfonce;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 10px;
+    &:hover {
+        cursor: pointer;
+        background-color: $bgcolor;
+        color: white;
+    }
+}
+button {
+    @include bouton($grisfonce);
+}

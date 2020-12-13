@@ -1,60 +1,139 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memopus - je sais, un peu, beaucoup, parfaitement</title>
     <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="stylesheet" href="./CSS/reset.css">
+    <!-- <link rel="stylesheet" href="./CSS/reset.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
+
 <body>
     <header>
-        <h1>memo</h1>
+        <h1>Memo<i class="fas fa-user-check fa-sm"></i>
+        </h1>
         <nav>
             <ul>
-                <li>bootstrap</li>
-                <li>css ></li>
-                <li>html</li>
-                <li>javascript</li>
-                <li>linux</li>
-                <li>sass</li>
-                <li>visual studio code</li>
+                <li><button id="boutonvert">+</button></li>
+                <li id="puce">linux<i class="fas fa-cog fa-sm"></i></li>
+                <li id="puce">visual studio code<i class="fas fa-cog fa-sm"></i></li>
+                <li id="puce">html<i class="fas fa-cog fa-sm"></i></li>
+                <li id="puce">flexbox<i class="fas fa-cog fa-sm"></i></li>
+                <li id="puce">bootstrap<i class="fas fa-cog fa-sm"></i></li>
+                <li id="puce">sass<i class="fas fa-cog fa-sm"></i></li>
+                <li id="puce">javascript<i class="fas fa-cog fa-sm"></i></li>
             </ul>
         </nav>
+        <h2>Flexbox</h2>
     </header>
     <main>
-        <h2>Javascript</h2>
-        <section>
-                <h3>à apprendre</h3>
-                <article>
-                    <h4>Titre</h4>
-                    <button>Proposer une réponse</button>
-                </article>
-            </section>
-            <section>
+        <section id="section_colonne">
+            <article id="article_entete">
+                <button id="boutonvert">+</button>
+                <h3>À apprendre</h3>
+            </article>
+            <article id="article_texte">
+                <section id="row">
+                    <i class="far fa-arrow-alt-circle-left"></i>
+                    <h4>Texte</h4>
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                </section>
+                <section id="reponse">
+                    <button id="boutonjaune">Proposer une réponse</button>
+                    <i class="fas fa-cog fa-sm"></i>
+                </section>
+            </article>
+            <article id="article_texte">
+                <section id="row">
+                    <i class="far fa-arrow-alt-circle-left"></i>
+                    <h4>Texte</h4>
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                </section>
+                <section id="reponse">
+                    <button id="boutonjaune">Proposer une réponse</button>
+                    <i class="fas fa-cog fa-sm"></i>
+                </section>
+            </article>
+            <article id="article_texte">
+                <section id="row">
+                    <i class="far fa-arrow-alt-circle-left"></i>
+                    <h4>Texte</h4>
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                </section>
+                <section id="reponse">
+                    <button id="boutonjaune">Proposer une réponse</button>
+                    <i class="fas fa-cog fa-sm"></i>
+                </section>
+            </article>
+        </section>
+        <section id="section_colonne">
+            <article id="article_entete">
+                <button id="boutonvert">+</button>
                 <h3>Je sais un peu</h3>
-                <article>
-                    <h4>Titre</h4>
-                    <button>Proposer une réponse</button>
-                </article>
-            </section>
-            <section>
-                <h3>je sais bien</h3>
-                <article>
-                    <h4>Titre</h4>
-                    <button>Proposer une réponse</button>
-                </article>
-            </section>
-            <section>
+            </article>
+            <article id="article_texte">
+                <section id="row">
+                    <i class="far fa-arrow-alt-circle-left"></i>
+                    <h4>Texte</h4>
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                </section>
+                <section id="reponse">
+                    <button id="boutonjaune">Proposer une réponse</button>
+                    <i class="fas fa-cog fa-sm"></i>
+                </section>
+            </article>
+            <article id="article_texte">
+                <section id="row">
+                    <i class="far fa-arrow-alt-circle-left"></i>
+                    <h4>Texte</h4>
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                </section>
+                <section id="reponse">
+                    <button id="boutonjaune">Proposer une réponse</button>
+                    <i class="fas fa-cog fa-sm"></i>
+                </section>
+            </article>
+        </section>
+        <section id="section_colonne">
+            <article id="article_entete">
+                <button id="boutonvert">+</button>
+                <h3>Je sais beaucoup</h3>
+            </article>
+            <article id="article_texte">
+                <section id="row">
+                    <i class="far fa-arrow-alt-circle-left"></i>
+                    <h4>Texte</h4>
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                </section>
+                <section id="reponse">
+                    <button id="boutonjaune">Proposer une réponse</button>
+                    <i class="fas fa-cog fa-sm"></i>
+                </section>
+            </article>
+        </section>
+        <section id="section_colonne">
+            <article id="article_entete">
+                <button id="boutonvert">+</button>
                 <h3>Je sais parfaitement</h3>
-                <article>
-                    <h4>Titre</h4>
-                    <button>Proposer une réponse</button>
-                </article>
-            </section>
+            </article>
+            <article id="article_texte">
+                <section id="row">
+                    <i class="far fa-arrow-alt-circle-left"></i>
+                    <h4>Texte</h4>
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                </section>
+                <section id="reponse">
+                    <button id="boutonjaune">Proposer une réponse</button>
+                    <i class="fas fa-cog fa-sm"></i>
+                </section>
+            </article>
+        </section>
     </main>
     <footer>
         <p><a href="#">Les cartes des autres</a></p>
     </footer>
 </body>
+
 </html>
