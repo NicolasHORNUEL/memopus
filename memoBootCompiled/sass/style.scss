@@ -1,0 +1,5 @@
+/* customisation avant l'import bootstrap car les valeurs de bootstrap sont assignées par défault si */
+
+@import "./custom_variables.scss";
+@import "../bootstrap/scss/bootstrap.scss";
+
