@@ -1,4 +1,4 @@
-/* Rédéfinition des couleur via à tableau associatif */
+/* Rédéfinition des couleur via un tableau associatif */
 $theme-colors: (
   "primary":  #E74C2B,
   "secondary":#000000,
@@ -41,68 +41,7 @@ h2 {
     color:white;
 }
 
-/* Média query classique : quand l'écran sera plus petit que 992px, on n'affiche pas les icônes des réseaux sociaux */
-/* 
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px; */
 
-@media (min-width: 992px) {
-    .ddo-card {
-        flex: 0 0 30%;  /* flex-grow | flex-shrink | flex-basis */
-        width: 30%;
-    }    
-}
- @media (min-width: 768px) and (max-width: 992px){
-    .ddo-card {
-        flex:0 0 50%;
-        width: 50%;
-    }
-}
-@media (min-width: 576px) and (max-width: 768px) {
-    .ddo-card {
-        flex:0 0 75%;
-        width: 75%;
-    }
-}
-@media (max-width:576px) {
-    .ddo-card {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-.ddo-card {
-    display: flex;
-    border:0;
-    position: relative;
-    min-height: 1px;
-    margin: 15px;
-}
-$enable-gradients:true;
 
-/* Un dégradé suivant une ligne à 45°
- qui démarre en bleu et finit en rouge :
-linear-gradient(45deg, blue, red);*/
-.bg-gradient-ddo {
-    background: linear-gradient(to top, map-get($theme-colors, "secondary"), rgba(0,0,0,0)) !important;
-}
-.card-title a {
-    display: block;
-    color:map-get($theme-colors, "white");
-    background-color:map-get($theme-colors, "secondary");
-    text-decoration: none;
-    padding: 5px;
-    font-size: 0.6875em;
-    /*11/16*/
-    border: 1px solid map-get($theme-colors, "secondary");
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: 500;
-    &:hover {
-        background-color: map-get($theme-colors, "white");
-        color: map-get($theme-colors, "secondary");
-      }
-}
+
 

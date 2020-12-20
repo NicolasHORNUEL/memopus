@@ -1,0 +1,112 @@
+/* header */
+
+.ddo-entete-fixe {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%; 
+}
+.ddo-btn-right {
+    border: 2px solid map-get($theme-colors, "primary");
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-right: 15px;
+    flex: 1 1 auto;
+}
+.ddo-entete-right {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+}
+.ddo-btn-right-hidden {
+    @extend .ddo-btn-right;
+}
+.ddo-list-nav {
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+@media (max-width: 992px) {
+    .ddo-sociaux, .ddo-btn-right-hidden {
+        display: none;
+    } 
+    .container {
+        width: 750px;
+    }
+    .ddo-btn-right {
+        border:none;
+    }
+    .ddo-entete-fixe {
+        flex: 0 0 100%;
+        max-width: 100%; 
+    }
+    .ddo-entete-right {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .ddo-list-nav {
+        display: none;
+    } 
+
+}
+
+/* main */
+
+@media (min-width: 992px) {
+    .ddo-card {
+        flex: 0 0 30%;  /* flex-grow | flex-shrink | flex-basis */
+        width: 30%;
+    }    
+}
+ @media (min-width: 768px) and (max-width: 992px){
+    .ddo-card {
+        flex:0 0 50%;
+        width: 50%;
+    }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+    .ddo-card {
+        flex:0 0 75%;
+        width: 75%;
+    }
+}
+@media (max-width:576px) {
+    .ddo-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+.ddo-card {
+    display: flex;
+    border:0;
+    position: relative;
+    min-height: 1px;
+    margin: 15px;
+}
+$enable-gradients:true;
+
+/* Un dégradé suivant une ligne à 45°
+ qui démarre en bleu et finit en rouge :
+linear-gradient(45deg, blue, red);*/
+.bg-gradient-ddo {
+    background: linear-gradient(to top, map-get($theme-colors, "secondary"), rgba(0,0,0,0)) !important;
+}
+.card-title a {
+    display: block;
+    color:map-get($theme-colors, "white");
+    background-color:map-get($theme-colors, "secondary");
+    text-decoration: none;
+    padding: 5px;
+    font-size: 0.6875em;
+    /*11/16*/
+    border: 1px solid map-get($theme-colors, "secondary");
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 500;
+    &:hover {
+        background-color: map-get($theme-colors, "white");
+        color: map-get($theme-colors, "secondary");
+      }
+}

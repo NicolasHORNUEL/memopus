@@ -1,24 +1,82 @@
+/* générale */
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
-/* header */
-h1 {
-    text-align: center;
-    background-color: grey;
-    font-size: 2em;
+
+/* boutons */
+#boutonvert {
+    background-color: #28a745;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    margin: .5rem;
+    font-size: 1.1rem;
     color: white;
-    margin-top: 0;
+}
+#boutongris {
+    background-color: #6c757d;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1.1rem;
+    color: white;
+    line-height: 1.5;
+    border-radius: .25rem;
+    margin: .5rem
+}
+#boutonjaune {
+    background-color: #ffc107;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    color: #212529;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    margin: .5rem
+}
+
+/* titre */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    background-color: #6c757d;
+    color: white;
+    margin: 0;
     border: 0;
 }
-nav {
-    margin: 10px;
+h2 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin: .5rem;
+}
+h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 0;
+}
+h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    flex-grow: 1;
+    margin: 5px;
+}
+
+/* icones */
+button i {
+    padding-left: 1rem;
 }
 .fa-user-check {
-    color:green;
+    color:#28a745;
     font-size: 0.5em;
     margin-left: 5px;
 }
+main .far, #reponse .fas {
+    font-size: 1.5em;
+}
+
+/* header, nav */
 ul {
     list-style: none;
     display: flex;
@@ -28,69 +86,64 @@ ul {
 	padding: 0;
 	border: 0;
 }
-#puce {
-    background-color: grey;
-    color: white;
-    font-size: 1em;
-    padding: 5px;
-    border-radius: 5px;
-    margin: 5px;
-}
-h2 {
-    margin: 10px;
-}
+
 /* main */
-main {
+@media (min-width:1200px) {
+    main {
+        max-width: 1140px;
+        flex-wrap: nowrap;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    h2 {
+        max-width: 1140px;
+        flex-wrap: nowrap;
+        margin-left: .5rem;
+    }
+
+}
+main div {
     display: flex;
     flex-wrap: wrap;
-    margin: 10px 0;
 }
 #section_colonne {
     display: flex;
     flex-direction: column;
-    margin:0 10px;
     flex-grow: 1;
-}
-h3 {
-    margin: 0;
 }
 #article_entete {
     display: flex;
-    font-size: 1em;
     border-radius: 5px;
     align-items: center;
 }
 #article_texte {
-    background-color: grey;
+    background-color: #6c757d;
     color:white;
     display: flex;
     flex-direction: column;
-    font-size: 1em;
     border-radius: 5px;
     padding: 5px;
-    margin-bottom: 10px;
+    margin: .5rem;
 }
 #row {
     display: flex;
     flex-direction: row;
     align-content: flex-start;
 }
-h4 {
-    flex-grow: 1;
-    margin: 5px;
-}
 #reponse {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
-#boutonjaune {
-    background-color: yellow;
-    border-radius: 5px;
+@media (min-width: 576px) {
+    #section_colonne {
+        flex-basis: 0;
+    } 
 }
+
 /* footer */
 footer {
-    background-coloR:grey;
+    background-coloR:#6c757d;;
     padding: 3px;
     text-align: center;
     color: white;
@@ -100,19 +153,4 @@ footer a {
 }
 p {
 margin: 3px;
-}
-/* générale */
-#boutonvert {
-    background-color: green;
-    color: white;
-    font-size: 0.9em;
-    padding: 5px 9px;
-    border-radius: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
-i {
-    padding-left: 5px;
-    margin: 5px 0;
 }
