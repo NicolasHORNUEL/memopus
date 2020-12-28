@@ -1,27 +1,65 @@
 import CoopDom from "../CoopDom.js";
+import Card from "./Card.js";
 
 export default class Modal extends CoopDom {
-    constructor() {
+    constructor(term, column, DOMcolumn) {
         super();
+        this.term = term;
+        this.column = column;
+        this.DOMcolumn = DOMcolumn;
 
         // Appel de la méthode qui va afficher le formulaire
         this.domElements = this.renderModal(); 
+
+        // gestion des événements
+        this.handleEvents();
+
     }   
+
+    addCard = () => {
+        new Card("Question", "Réponse", this.DOMcolumn); // this représente l'instance de la colonne
+    }
+
+    handleEvents = () => {
+        // gestion de la soumission du formulaire de modification
+        this.domElements.button_send.onclick = () => {
+
+            // Récupération des nouvelles valeurs
+            const new_question = this.domElements.input_question.value;
+            const new_answer = this.domElements.input_answer.value;
+
+            new Card(new_question, new_answer, this.DOMcolumn); // this représente l'instance de la colonne
+        }
+    }
+
     renderModal = () => {
          // Création  des éléments du DOM grâce à la méthode createAddDomElt héritée de CoopDom
-        const div1 = this.createAddDomElt("div", "", document.body,{"class":"modal", "id":"modal_container"});
-        const div2 = this.createAddDomElt("div", "", div1, {"id":"modal_content"});
-        const button1 = this.createAddDomElt("div", "X", div2,{"type":"button", "id":"X_btn"});
-        const h1 = this.createAddDomElt("h1", "Coucou je suis une fenêtre modale", div2);
-        const form = this.createAddDomElt("form", "", div2);
-        const p1 = this.createAddDomElt("p", "", form);
-        const label1 = this.createAddDomElt("label", "Text area", p1);
-        const textarea1 = this.createAddDomElt("textarea", "Text area", p1,{"name":"textarea", "id":"textarea", "cols":"30", "rows":"10", "resize":"true"});
-        const p2 = this.createAddDomElt("p", "", form);
-        const label2 = this.createAddDomElt("label", "password", p2, {"for":"password"});
-        const input1 = this.createAddDomElt("input", "", p2,{"type":"password", "id":"password"});
-        const p3 = this.createAddDomElt("p", "", form);
-        const button2 = this.createAddDomElt("button", "Close", p3,{"id":"close_btn"});
+        const divmodal = this.createAddDomElt("div", "", document.querySelector("#modal"),{"class":"modal fade", "id":"myModal"});
+        const divformat = this.createAddDomElt("div", "", divmodal, {"class":"modal-dialog"});
+        const divcontent = this.createAddDomElt("div", "", divformat, {"class":"modal-content"});
+        const divheader = this.createAddDomElt("div", "", divcontent, {"class":"modal-header"}); 
+
+        const h4 = this.createAddDomElt("h4", this.term + " / " + this.column, divheader, {"class":"modal-title"});
+        const buttonheader = this.createAddDomElt("button", "X", divheader,{"type":"button", "class":"close", "data-dismiss":"modal"});
+
+        const divbody = this.createAddDomElt("div", "", divcontent, {"class":"modal-body"});
+        const form_edit = this.createAddDomElt("form", "", divbody);
+        
+        const label_question = this.createAddDomElt("label", "Question", form_edit, {"for":"question"});
+        const input_question = this.createAddDomElt("input", "", form_edit, {"type": "texte", "value":"","class":"form-control"});
+
+        const label_answer = this.createAddDomElt("label", "Réponse", form_edit, {"for":"answer"});
+        const input_answer = this.createAddDomElt("input", "", form_edit, {"type": "texte", "value":"","class":"form-control"});
+
+        const divfooter = this.createAddDomElt("div", "", divcontent, {"class":"modal-footer"});
+        const button_send = this.createAddDomElt("input","",divfooter,{"type": "submit", "value": "Envoyer","class":"btn btn-success","data-toggle":"modal", "data-target":"#myModal"});
+
+        return {
+            "input_question": input_question,
+            "input_answer": input_answer,
+            "button_send": button_send,
+            "form_edit" : form_edit,
+        };
 
     }
 }
